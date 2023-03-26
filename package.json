@@ -1,0 +1,44 @@
+{
+  "name": "@your-org/server",
+  "version": "0.0.1",
+  "description": "Generic server",
+  "main": "./src/index.js",
+  "repository": "https://github.com/your-org/server.git",
+  "author": "Your org",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "10.0.0",
+    "fastify": "3.29.4",
+    "fastify-auth0-verify": "0.5.2",
+    "fastify-cors": "6.0.2",
+    "fastify-plugin": "3.0.0",
+    "fastify-swagger": "4.8.3",
+    "mongodb": "4.0.1",
+    "ramda": "0.27.1"
+  },
+  "scripts": {
+    "lint": "eslint ./src/**/*.js ./test/**/*.js",
+    "start": "node ./src/index",
+    "test": "cross-env NODE_ENV=test mocha ./test/unit/**/*.js",
+    "test:coverage": "cross-env NODE_ENV=test c8 --reporter=html --reporter=lcov --reporter=text yarn test",
+    "test:integration": "cross-env NODE_ENV=test mocha ./test/integration/**/*.js",
+    "ci": "yarn && yarn test && yarn lint"
+  },
+  "devDependencies": {
+    "@types/mongodb": "4.0.7",
+    "c8": "7.8.0",
+    "chai": "4.3.4",
+    "cross-env": "7.0.3",
+    "eslint": "7.32.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-node": "11.1.0",
+    "mocha": "9.0.3",
+    "sinon": "11.1.2"
+  },
+  "type": "module",
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.x"
+  }
+}
